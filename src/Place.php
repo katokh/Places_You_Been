@@ -3,12 +3,14 @@
       {
         private $cityName;
         private $lengthOfTime;
+        private $reasonOfVisit;
 
         //Constructor
-        function __construct($cityName, $lengthOfTime)
+        function __construct($cityName, $lengthOfTime, $reasonOfVisit)
         {
           $this->city = $cityName;
           $this->time = $lengthOfTime;
+          $this->reason = $reasonOfVisit;
         }
 
         //Setters
@@ -22,6 +24,11 @@
           $this->time = (float) $new_length_of_time;
         }
 
+        function setReasonOfVisit($new_reason_of_visit)
+        {
+          $this->time = (float) $new_reason_of_visit;
+        }
+
         //Getters
         function getCityName()
         {
@@ -31,6 +38,11 @@
         function getLengthOfTime()
         {
           return $this->time;
+        }
+
+        function getReasonOfVisit()
+        {
+          return $this->reason;
         }
 
         //Save Method

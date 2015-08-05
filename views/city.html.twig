@@ -7,12 +7,15 @@
 
       {% if cities is not empty %}
         <p>Here are your cities:</p>
-        <ul>
+
           {% for city in cities %}
-            <li>{{ city.getCityName }}</li>
+            <h3>{{ city.getCityName }}</h3>
+            <ul>
             <li>{{ city.getLengthOfTime }} Days</li>
+            <li>{{ city.getReasonOfVisit }}</li>
+            </ul>
           {% endfor %}
-        </ul>
+
       {% endif %}
 
       <form action = '/city' method = 'post'>
@@ -22,6 +25,9 @@
 
         <label for = 'lengthOfTime'>Enter number of Days!</label>
         <input id = 'lengthOfTime' name = 'lengthOfTime' type = 'number'> </br>
+
+        <label for = 'reasonOfVisit'>Business or Pleasure?</label>
+        <input id = 'reasonOfVisit' name = 'reasonOfVisit' type = 'text'> </br>
 
         <button type = 'submit'> Add Your City!</button>
       </form>
