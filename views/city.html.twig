@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Places You've Been</title>
+  </head>
+    <body>
+      <h1>Places You've Been</h1>
+
+      {% if cities is not empty %}
+        <p>Here are your cities:</p>
+        <ul>
+          {% for city in cities %}
+            <li>{{ city.getCityName }}</li>
+            <li>{{ city.getLengthOfTime }} Days</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <form action = '/city' method = 'post'>
+
+        <label for = 'cityName'>Enter City Name</label>
+        <input id = 'cityName' name = 'cityName' type = 'text'> </br>
+
+        <label for = 'lengthOfTime'>Enter number of Days!</label>
+        <input id = 'lengthOfTime' name = 'lengthOfTime' type = 'number'> </br>
+
+        <button type = 'submit'> Add Your City!</button>
+      </form>
+
+      <form action = '/delete_city' method = 'post'>
+        <button type='submit'>Delete Your Cities</button>
+      </form>
+
+      </body>
+  </html>
