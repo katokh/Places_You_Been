@@ -4,13 +4,15 @@
         private $cityName;
         private $lengthOfTime;
         private $reasonOfVisit;
+        private $imagePath;
 
         //Constructor
-        function __construct($cityName, $lengthOfTime, $reasonOfVisit)
+        function __construct($cityName, $lengthOfTime, $reasonOfVisit, $imagePath)
         {
           $this->city = $cityName;
           $this->time = $lengthOfTime;
           $this->reason = $reasonOfVisit;
+          $this->image = $imagePath;
         }
 
         //Setters
@@ -26,7 +28,12 @@
 
         function setReasonOfVisit($new_reason_of_visit)
         {
-          $this->time = (float) $new_reason_of_visit;
+          $this->reason = (float) $new_reason_of_visit;
+        }
+
+        function setImagePath($new_image_path)
+        {
+          $this->image = (string) $new_image_path;
         }
 
         //Getters
@@ -43,6 +50,11 @@
         function getReasonOfVisit()
         {
           return $this->reason;
+        }
+
+        function getImagePath()
+        {
+          return $this->image;
         }
 
         //Save Method

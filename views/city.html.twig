@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet'>
     <title>Places You've Been</title>
   </head>
     <body>
@@ -13,6 +14,7 @@
             <ul>
             <li>{{ city.getLengthOfTime }} Days</li>
             <li>{{ city.getReasonOfVisit }}</li>
+            <li><img src= {{city.imagePath}} width= 25%></li>
             </ul>
           {% endfor %}
 
@@ -28,6 +30,9 @@
 
         <label for = 'reasonOfVisit'>Business or Pleasure?</label>
         <input id = 'reasonOfVisit' name = 'reasonOfVisit' type = 'text'> </br>
+
+        <label for = 'imagePath'>Add a photo with a URL:</label>
+        <input id = 'imagePath' name = 'imagePath' type = 'text'> </br>
 
         <button type = 'submit'> Add Your City!</button>
       </form>

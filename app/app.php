@@ -35,7 +35,7 @@
 
       //cities POST
       $app->post("/city", function() use ($app) {
-        $city = new Place($_POST['cityName'], $_POST['lengthOfTime'], $_POST['reasonOfVisit']);
+        $city = new Place($_POST['cityName'], $_POST['lengthOfTime'], $_POST['reasonOfVisit'], $_POST['imagePath']);
         $city->save();
 
         return $app['twig']->render('create_city.html.twig', array('newcity' => $city));
